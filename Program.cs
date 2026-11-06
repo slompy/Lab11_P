@@ -37,40 +37,104 @@
 
 using System.Text.RegularExpressions;
 
-int[] pointsPerLab = { 8, -1, 10, 9, -1, 7 };
-int sum = 0;
-int count = 1;
+// int[] pointsPerLab = { 8, -1, 10, 9, -1, 7 };
+// int sum = 0;
+// int count = 1;
 
-foreach (int points in pointsPerLab)
+// foreach (int points in pointsPerLab)
+// {
+//     if (points < 0)
+//     {
+//         continue;
+//     }
+//     else
+//     {
+//         count++;
+//     }
+//     sum += points;
+// }
+
+// System.Console.WriteLine($"Всего работ сдано: {count}");
+// System.Console.WriteLine($"Сумма баллов за сданные работы: {sum}");
+// System.Console.WriteLine();
+
+
+// int[] groupIds = { 101, 104, 107, 104, 110 };
+// bool hasDuplicates = false;
+
+// for (int i = 0; i < groupIds.Length; i++)
+// {
+//     for (int j = i + 1; j < groupIds.Length; j++)
+//     {
+//         if (groupIds[i] == groupIds[j])
+//         {
+//             hasDuplicates = true;
+//             System.Console.WriteLine($"Совпавшие номера: {groupIds[i]} и {groupIds[j]}");
+//             break;
+//         }
+//     }
+// }
+
+// System.Console.WriteLine(hasDuplicates ? "Есть повторяющиеся номера" : "Все номера уникальны");
+// System.Console.WriteLine();
+
+// int days = 5;
+// int lessonsPerDay = 6;
+// bool found = false;
+
+// for (int day = 1; day <= days && !found; day++)
+// {
+//     for (int lesson = 1; lesson <= lessonsPerDay; lesson++)
+//     {
+//         bool isFree = (day == 3 && lesson == 4);
+
+//         if (isFree)
+//         {
+//             System.Console.WriteLine($"Свободный слот: день {day}, урок {lesson}");
+//             found = true;
+//             break;
+//         }
+//     }
+// }
+
+// if (!found)
+// {
+//     System.Console.WriteLine("Свободный слотов нет");
+// }
+
+// Задача А
+int[] numburs = { 100, 10, 1000, 500, 67 };
+int correctNumbur = 50;
+bool correct = false;
+
+foreach (int numbur in numburs)
 {
-    if (points < 0)
+    if (numbur == correctNumbur)
     {
-        continue;
+        System.Console.WriteLine($"Число найдено: {correctNumbur}");
+        correct = true;
+        break;
     }
-    else
-    {
-        count++;
-    }
-    sum += points;
 }
 
-System.Console.WriteLine($"Всего работ сдано: {count}");
-System.Console.WriteLine($"Сумма баллов за сданные работы: {sum}");
-System.Console.WriteLine();
+if (correct == false)
+{
+    System.Console.WriteLine("Число не найдено");
+}
 
-
-int[] groupIds = { 101, 104, 107, 104, 110 };
+// Задача Г
+int[] numbars = { 50, 50, 40, 41, 42, 42, 42, 43, 42, 43 };
 bool hasDuplicates = false;
 
-for (int i = 0; i < groupIds.Length; i++)
+for (int i = 0; i < numbars.Length; i++)
 {
-    for (int j = i + 1; j < groupIds.Length; j++)
+    for (int j = i + 1; j < numbars.Length; j++)
     {
-        if (groupIds[i] == groupIds[j])
+        if (numbars[i] == numbars[j])
         {
             hasDuplicates = true;
-            System.Console.WriteLine($"Совпавшие номера: {groupIds[i]} и {groupIds[j]}");
-            break;
+            System.Console.WriteLine($"Совпавшие номера: {numbars[i]} и {numbars[j]}");
+            continue;
         }
     }
 }
