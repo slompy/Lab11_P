@@ -12,16 +12,11 @@ foreach (int number in recordBooks)
 }
 System.Console.WriteLine(found ? "Студент найден" : "Студент не найден");
 
-int variant = 1;
+int variant = 2;
 bool isPrime = true;
 
 for (int divisor = 2; divisor < variant; divisor++)
 {
-    if (variant == 1)
-    {
-        System.Console.WriteLine("1 не является ни простым, ни составным числом");
-        break;
-    }
     if (variant % divisor == 0 && variant != 1)
     {
         isPrime = false;
@@ -29,5 +24,13 @@ for (int divisor = 2; divisor < variant; divisor++)
     }
 }
 
-System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
+if (variant == 1)
+{
+    System.Console.WriteLine("1 не является ни простым, ни составным числом");
+}
+else
+{
+    System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
+
+}
 
