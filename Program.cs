@@ -99,41 +99,123 @@
 //     System.Console.WriteLine("Свободный слотов нет");
 // }
 
-// Задача А
-int[] numburs = { 100, 10, 1000, 500, 67 };
-int correctNumbur = 50;
-bool correct = false;
+// // Задача А
+// int[] numburs = { 100, 10, 1000, 500, 67 };
+// int correctNumbur = 50;
+// bool correct = false;
 
-foreach (int numbur in numburs)
+// foreach (int numbur in numburs)
+// {
+//     if (numbur == correctNumbur)
+//     {
+//         System.Console.WriteLine($"Число найдено: {correctNumbur}");
+//         correct = true;
+//         break;
+//     }
+// }
+
+// if (correct == false)
+// {
+//     System.Console.WriteLine("Число не найдено");
+// }
+
+// // Задача Г
+// int[] numbars = { 50, 50, 40, 41, 42, 43, 42, 43 };
+// bool hasDuplicates = false;
+
+// for (int i = 0; i < numbars.Length; i++)
+// {
+//     for (int j = i + 1; j < numbars.Length; j++)
+//     {
+//         if (numbars[i] == numbars[j])
+//         {
+//             hasDuplicates = true;
+//             break;
+//         }
+//     }
+// }
+
+// System.Console.WriteLine(hasDuplicates ? "Есть повторяющиеся номера" : "Все номера уникальны");
+// System.Console.WriteLine();
+
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+// Console.WriteLine("Фамилия не введена. Завершение работы.");
+// return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+// .OrderBy(_ => rnd.Next())
+// .Take(2)
+// .OrderBy(x => x)
+// .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+using System.Runtime.InteropServices;
+
+
+// Вариант 2
+System.Console.WriteLine("Вариант 2: Проверка нескольких числе на простоту");
+System.Console.WriteLine();
+
+
+int variant = 1;
+bool isPrime = true;
+
+while (variant != 0)
 {
-    if (numbur == correctNumbur)
+    System.Console.Write("Введите число (для выхода - 0): ");
+    variant = int.Parse(System.Console.ReadLine()!);
+
+    if (variant == 0)
     {
-        System.Console.WriteLine($"Число найдено: {correctNumbur}");
-        correct = true;
         break;
     }
-}
 
-if (correct == false)
-{
-    System.Console.WriteLine("Число не найдено");
-}
-
-// Задача Г
-int[] numbars = { 50, 50, 40, 41, 42, 43, 42, 43 };
-bool hasDuplicates = false;
-
-for (int i = 0; i < numbars.Length; i++)
-{
-    for (int j = i + 1; j < numbars.Length; j++)
+    if (variant % 2 == 0)
     {
-        if (numbars[i] == numbars[j])
+        isPrime = false;
+        if (variant == 1)
         {
-            hasDuplicates = true;
-            break;
+            System.Console.WriteLine("1 не является ни простым, ни составным числом");
+        }
+        else
+        {
+            System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
+
+        }
+        
+    } else
+    {
+        isPrime = true;
+        if (variant == 1)
+        {
+            System.Console.WriteLine("1 не является ни простым, ни составным числом");
+        }
+        else
+        {
+            System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
+
         }
     }
 }
 
-System.Console.WriteLine(hasDuplicates ? "Есть повторяющиеся номера" : "Все номера уникальны");
+// Вариант 5
+System.Console.WriteLine("Вариант 5: Число, кратное 2 и 3 одновременно");
 System.Console.WriteLine();
+
+System.Console.WriteLine("Поиск числа кратное 2 и 3:");
+System.Console.WriteLine();
+
+for (int i = 0; i != 100; i++)
+{
+    if (i % 2 == 0 && i % 3 == 0 && i != 0)
+    {
+        System.Console.WriteLine($"Число найдено: {i}");
+        break;
+    }
+}
+
+
