@@ -156,66 +156,98 @@
 using System.Runtime.InteropServices;
 
 
-// Вариант 2
-System.Console.WriteLine("Вариант 2: Проверка нескольких числе на простоту");
-System.Console.WriteLine();
+// // Вариант 2
+// System.Console.WriteLine("Вариант 2: Проверка нескольких числе на простоту");
+// System.Console.WriteLine();
 
 
-int variant = 1;
-bool isPrime = true;
+// int variant = 1;
+// bool isPrime = true;
 
-while (variant != 0)
+// while (variant != 0)
+// {
+//     System.Console.Write("Введите число (для выхода - 0): ");
+//     variant = int.Parse(System.Console.ReadLine()!);
+
+//     if (variant == 0)
+//     {
+//         break;
+//     }
+
+//     if (variant % 2 == 0)
+//     {
+//         isPrime = false;
+//         if (variant == 1)
+//         {
+//             System.Console.WriteLine("1 не является ни простым, ни составным числом");
+//         }
+//         else
+//         {
+//             System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
+
+//         }
+        
+//     } else
+//     {
+//         isPrime = true;
+//         if (variant == 1)
+//         {
+//             System.Console.WriteLine("1 не является ни простым, ни составным числом");
+//         }
+//         else
+//         {
+//             System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
+
+//         }
+//     }
+// }
+
+// // Вариант 5
+// System.Console.WriteLine("Вариант 5: Число, кратное 2 и 3 одновременно");
+// System.Console.WriteLine();
+
+// System.Console.WriteLine("Поиск числа кратное 2 и 3:");
+// System.Console.WriteLine();
+
+// for (int i = 0; i != 100; i++)
+// {
+//     if (i % 2 == 0 && i % 3 == 0 && i != 0)
+//     {
+//         System.Console.WriteLine($"Число найдено: {i}");
+//         break;
+//     }
+// }
+
+
+
+
+
+
+
+int[] groupIds = { 20, 32, 43, 42, 43, 20, 20, 22, };
+int target = 42;
+bool found = false;
+
+
+for (int i = 0; i < groupIds.Length && !found; i++)
 {
-    System.Console.Write("Введите число (для выхода - 0): ");
-    variant = int.Parse(System.Console.ReadLine()!);
-
-    if (variant == 0)
+    for (int j = i + 1; j < groupIds.Length; j++)
     {
-        break;
-    }
-
-    if (variant % 2 == 0)
-    {
-        isPrime = false;
-        if (variant == 1)
+        if (groupIds[i] + groupIds[j] == target)
         {
-            System.Console.WriteLine("1 не является ни простым, ни составным числом");
-        }
-        else
+            found = true;
+            System.Console.WriteLine($"Пара найдена! Цифры: {groupIds[i]}(индекс:{i}) и {groupIds[j]}(индекс:{j}) = {target}");
+            break;
+        } else
         {
-            System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
-
+            i++;
+            continue;
         }
         
-    } else
-    {
-        isPrime = true;
-        if (variant == 1)
-        {
-            System.Console.WriteLine("1 не является ни простым, ни составным числом");
-        }
-        else
-        {
-            System.Console.WriteLine(isPrime ? "Номер варианта простой" : "Номер варианта составной");
-
-        }
     }
 }
 
-// Вариант 5
-System.Console.WriteLine("Вариант 5: Число, кратное 2 и 3 одновременно");
-System.Console.WriteLine();
-
-System.Console.WriteLine("Поиск числа кратное 2 и 3:");
-System.Console.WriteLine();
-
-for (int i = 0; i != 100; i++)
+if (!found)
 {
-    if (i % 2 == 0 && i % 3 == 0 && i != 0)
-    {
-        System.Console.WriteLine($"Число найдено: {i}");
-        break;
-    }
+    System.Console.WriteLine("Пара не найдена");
 }
-
-
